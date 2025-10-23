@@ -6,7 +6,7 @@ app = FastAPI()
 # Allow frontend to call backend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["//https://brave-smoke-08424681e.3.azurestaticapps.net"],  # we'll tighten this later
+    allow_origins=["*"],  # we'll tighten this later
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -20,3 +20,4 @@ def root():
 def hello(name: str = "Reshmika"):
 
     return {"greeting": f"Hello, {name}! Welcome to FastAPI"}
+
